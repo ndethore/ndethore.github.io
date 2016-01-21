@@ -1,4 +1,5 @@
-description: Personal Blog
+title: Code and 김치
+description: A blog about software and life.
 email: nicolas@detho.re
 author: Nicolas de Thoré
 
@@ -17,10 +18,10 @@ show_social_icons:  true
 disqus_shortname:
 
 # Social icons
-github_username:
+github_username: ndethore
+twitter_username: ndethore
 bitbucket_username:
 stackoverflow_id:
-twitter_username:
 google_plus_id:
 linkedin_username:
 angellist_username:
