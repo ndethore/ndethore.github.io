@@ -20,7 +20,7 @@ layout: default
         </div>
       {% endfor %}
     </div>
-{% if posts_count > 1 %}
+{% if paginator.total_pages > 1 %}
     {% include pagination.html %}
 {% endif %}
   </div>
