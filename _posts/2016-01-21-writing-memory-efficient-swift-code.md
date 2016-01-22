@@ -31,7 +31,7 @@ array // ["Hello", "World"]
 copy // ["Hello", "World", "!"]
 ~~~
 
-The cool thing about them is that they always have a single owner. So it’s fairly easy for swift to free up memory when exiting the scope where there are used, outside of which they are no longer needed.
+The cool thing about them is that they always have a single owner. So it’s fairly easy for swift to free up memory when exiting the scope where there are used.
 
 Reference types are, you guessed it, passed by reference. In other words every time you assign a class instance to a variable or constant, you are creating a pointer to that instance in memory.
 
