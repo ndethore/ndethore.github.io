@@ -10,8 +10,8 @@ If you are a newcomer to Swift (or programming in general), chances are that you
 
 Between Monads, Lenses and Protocol Oriented Programming, let’s take a moment to talk about more fundamental stuff like memory management and especially how to avoid memory leaks.
 
-
-
+<br>
+## Introduction
 ###Structs vs Classes
 
 In Swift, the entities that you create fall into two categories :
@@ -51,7 +51,7 @@ thatCity.population // 100
 
 Since multiple parts of your code could have references to a same instance, let’s see how does the compiler(swift) knows when to free up the memory allocated when it’s no longer needed.
 
-
+<br>
 ###ARC to the rescue !
 **Automatic Reference Counting** is the compiler mechanism used by Swift (and Objective-C) to manage an app memory usages. 
 
@@ -80,7 +80,7 @@ other = nil // no strong ref. on the instance, ARC can dispose of it
 ARC is a very handful compiler feature that makes memory management seamless in most scenarios. However, it sometimes require extras infos from the developer to fully understand when does a class instance is to be deallocated…
 
 
-
+<br>
 ### Automatic ? Erh … almost !
 Say that you’re creating a space exploration game. Before setting out to deep space and find a tiny planet to build a colony on, you’ll need definitely need a spaceship and a pilot.
 
@@ -130,6 +130,9 @@ Hopefully, Swift defines keywords that can be used to give ARC more details abou
 
 Let’s walk through each reference cycle scenarios and show an example of how to resolve it using the appropriate reference type. 
 
+## How to break retain cycles
+
+>To help you follow along, a playground with the example classes is [available Github](https://github.com/ndethore/swift-memory-management).
 
 ### Scenario #1 - Both properties are allowed to be nil
 
@@ -401,9 +404,13 @@ That’s it. You’re ready to write leak free swift code and keep your app’s 
 * User capture list when you assign a closure to a property of an instance and that closure captures the instance.
 
 
-
-
 **Happy coding !** 
+
+---
+*[Edited on 2016-01-22]:* 
+
+A playground with the code samples above is [available on Github](https://github.com/ndethore/swift-memory-management).
+Pull requests are very welcomed 🤗
 
 
 
