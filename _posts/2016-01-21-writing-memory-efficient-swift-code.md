@@ -179,7 +179,7 @@ pilot = nil // Spaceship destroyed.
 
 ###Scenario #2 - One property is allowed to be nil and the other isn’t.
 
-Now, say the Intergalactic Empire Consulate require every Pilot to have a License Implent in order to maneuver a ship.
+Now, say the Intergalactic Empire Consulate require every pilot to have a implent in order to maneuver a ship.
 Let’s create our `Implent` class and update our `Pilot` class:
 
 ~~~swift
@@ -209,9 +209,9 @@ pilot = nil //...
 
 ~~~
 
-As we did for the first scenario, let’s take a moment to analyse the relationship between a Pilot and a License :
+As we did for the first scenario, let’s take a moment to analyse the relationship between a `Pilot` and a `Implent` :
 
-- A pilot does not necessarily have a license. His license can be deallocated without issues.
+- A pilot does not necessarily have an implent. His implent can be deallocated without issues.
 - An implent, however, is issued for a specific pilot. Therefore the pilot property of a `Implent` instance must always have a value. 
 
 The reference cycle created in this situation is best solved using an **unowned** reference.
