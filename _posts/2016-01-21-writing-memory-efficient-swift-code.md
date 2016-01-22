@@ -49,7 +49,9 @@ city.population // 100
 thatCity.population // 100
 ~~~
 
-Since multiple parts of your code could have references to a same instance, let’s see how does the compiler(swift) knows when to free up the memory allocated when it’s no longer needed.
+<br>
+
+Now, since multiple parts of your code could have references to a same instance, let’s see how does the compiler(swift) knows when to free up the memory when it’s no longer needed.
 
 <br>
 ###ARC to the rescue !
@@ -130,10 +132,12 @@ Hopefully, Swift defines keywords that can be used to give ARC more details abou
 
 Let’s walk through each reference cycle scenarios and show an example of how to resolve it using the appropriate reference type. 
 
+<br>
 ## How to break retain cycles
 
->To help you follow along, a playground with the example classes is [available Github](https://github.com/ndethore/swift-memory-management).
+To help you follow along, a playground with the example classes is [available Github](https://github.com/ndethore/swift-memory-management).
 
+<br>
 ### Scenario #1 - Both properties are allowed to be nil
 
 If we consider the relationship between the Spaceship and the Pilot we created above:
@@ -177,6 +181,7 @@ pilot = nil // Spaceship destroyed.
 
 *Note*:  **weak** references are declared as **var** to indicate that their value can change at runtime. You’ll need to unwrap the property before accessing it’s value.
 
+<br>
 ###Scenario #2 - One property is allowed to be nil and the other isn’t.
 
 Now, say the Intergalactic Empire Consulate require every pilot to have a implent in order to maneuver a ship.
@@ -239,7 +244,7 @@ class Implent {
 
 *Note* : Make sure that the implent is owned by a single pilot so when it is deallocated, the implent has no more strong references to it and gets deallocated too.
 
-
+<br>
 ###Scenario #3 - Both properties should always have a value.
 
 Now, the last step of our spaceship assembly line is to generate an Intergalactic Registration Beacon an seal it on the main engine. This beacon is required by every spaceship.
@@ -301,7 +306,7 @@ class Spaceship {
 
 *Note*: The `Spaceship` initializer cannot pass `self` to the `Beacon` initializer until a new `Spaceship` is fully initialized. To cope with this requirement we can declare the beacon propperty as an implicity unwrapped optional. It will have a default value of nil, allow the two phase initialization were attempting and will still be accessible without the need to unwrap its value.
 
-
+<br>
 ###Scenario #4 - Closure need to access instance properties or methods.
 
 Depending on your background, you may be familiar the *blocks* in C and Objective-C or *lambdas* in other languages.  
